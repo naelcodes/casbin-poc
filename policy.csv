@@ -1,0 +1,32 @@
+p, user0, role::owner, data
+p, user1, role::team-lead,team-1-data
+
+p, user1, role::member,data.1
+p, user2, role::member,data.2
+p, user3, role::member,data.3
+
+p, user4, role::team-lead, team-2-data
+p, user4, role::member,data.4
+p, user5, role::member,data.5
+p, user6, role::member,data.6
+
+
+g, role::owner, read
+g, role::owner, write
+g, role::team-lead, read
+g, role::team-lead, write
+g, role::member, read
+g, role::member, write
+
+
+g, role::owner, role::team-lead
+g, role::team-lead, role::member
+
+g2, team-1-data, data.1
+g2, team-1-data, data.2
+g2, team-1-data, data.3
+g2, team-2-data, data.4
+g2, team-2-data, data.5
+g2, team-2-data, data.6
+g2, data, team-1-data
+g2, data, team-2-data
